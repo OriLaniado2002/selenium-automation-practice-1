@@ -23,12 +23,11 @@ namespace WebAutomation.tests
             driver.Navigate().GoToUrl("https://www.advantageonlineshopping.com/#/");
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             driver.Manage().Window.Maximize();
-            int number = 3;
         }
 
         // 1. לאחר בחירה של לפחות שני מוצרים, בכמויות שונות, לבדוק שכמות המוצרים הסופית מופיעה נכון ומדוייקת בחלונית עגלת הקניות בצד ימין למעלה של המסך
         [Test]
-        public void Test1()
+        public void AddItemsInDifferentQuantitiesAndCheckOverallQuantity()
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
 
@@ -54,7 +53,7 @@ namespace WebAutomation.tests
 
         // 2. לאחר בחירה של 3 מוצרים, בכמויות שונות, יש בלדוק שהמוצרים מופיעים נכון: כולל שם, צבע, כמות ומחיר בחלונית עגלת הקניות בצד ימין למעלה של המסך
         [Test]
-        public void Test2()
+        public void VerifyDetailsForDifferentItemsInCartWindow()
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
 
@@ -131,7 +130,7 @@ namespace WebAutomation.tests
 
         // 3. לאחר בחירה של לפחות שני מוצרים והסרה של מוצר אחד ע"י שימוש בחלונית עגלת הקניות למעלה מימון, יש לבדוק שהמוצר אכן נעלם מחלונית העגלה
         [Test]
-        public void Test3()
+        public void RemoveAnItemFromCartAndVerifyItsRemoval()
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
 
