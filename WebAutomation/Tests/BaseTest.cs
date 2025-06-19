@@ -23,6 +23,7 @@ namespace WebAutomation.tests
             driver.Navigate().GoToUrl("https://www.advantageonlineshopping.com/#/");
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             driver.Manage().Window.Maximize();
+            int number = 3;
         }
 
         // 1. לאחר בחירה של לפחות שני מוצרים, בכמויות שונות, לבדוק שכמות המוצרים הסופית מופיעה נכון ומדוייקת בחלונית עגלת הקניות בצד ימין למעלה של המסך
