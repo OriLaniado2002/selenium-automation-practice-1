@@ -5,6 +5,8 @@ using OpenQA.Selenium.Support.UI;
 using System;
 using System.Threading;
 using OpenQA.Selenium.Interactions;
+using System.Reflection.PortableExecutable;
+using OpenQA.Selenium.BiDi.Modules.Session;
 
 
 namespace WebAutomation.tests
@@ -19,7 +21,7 @@ namespace WebAutomation.tests
         {
             driver = new ChromeDriver();
             driver.Navigate().GoToUrl("https://www.advantageonlineshopping.com/#/");
-            Thread.Sleep(4500);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             driver.Manage().Window.Maximize();
         }
 
@@ -27,15 +29,17 @@ namespace WebAutomation.tests
         [Test]
         public void Test1()
         {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+
             driver.FindElement(By.Id("miceImg")).Click();
-            Thread.Sleep(3000);
+            wait.Until(e => e.FindElement(By.Id("28")).Displayed);
             driver.FindElement(By.Id("28")).Click();
-            Thread.Sleep(TimeSpan.FromSeconds(4));
+            wait.Until(e => e.FindElement(By.Name("save_to_cart")).Displayed);
             driver.FindElement(By.Name("save_to_cart")).Click();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1);
             driver.FindElement(By.Name("save_to_cart")).Click();
             driver.Navigate().Back();
-            Thread.Sleep(500);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1);
             driver.Navigate().Back();
             driver.FindElement(By.Id("speakersImg")).Click();
             driver.FindElement(By.Id("24")).Click();
@@ -51,25 +55,27 @@ namespace WebAutomation.tests
         [Test]
         public void Test2()
         {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+
             IWebElement cartIcon = driver.FindElement(By.Id("menuCart"));
 
             driver.FindElement(By.Id("headphonesImg")).Click();
-            Thread.Sleep(4000);
+            wait.Until(e => e.FindElement(By.Id("15")).Displayed);
             driver.FindElement(By.Id("15")).Click();
-            Thread.Sleep(1500);
+            wait.Until(e => e.FindElement(By.Name("save_to_cart")).Displayed);
             driver.FindElement(By.Name("save_to_cart")).Click();
             driver.Navigate().Back();
 
             driver.FindElement(By.Id("124")).Click();
-            Thread.Sleep(1000);
+            wait.Until(e => e.FindElement(By.Name("save_to_cart")).Displayed);
             driver.FindElement(By.Name("save_to_cart")).Click();
             driver.Navigate().Back();
             driver.Navigate().Back();
 
             driver.FindElement(By.Id("tabletsImg")).Click();
-            Thread.Sleep(1000);
+            wait.Until(e => e.FindElement(By.Id("18")).Displayed);
             driver.FindElement(By.Id("18")).Click();
-            Thread.Sleep(1000);
+            wait.Until(e => e.FindElement(By.Name("save_to_cart")).Displayed);
             driver.FindElement(By.Name("save_to_cart")).Click();
 
             Actions actions = new Actions(driver);
@@ -126,16 +132,18 @@ namespace WebAutomation.tests
         [Test]
         public void Test3()
         {
-            Thread.Sleep(1500);
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+
+            wait.Until(e => e.FindElement(By.Id("laptopsImg")).Displayed);
             driver.FindElement(By.Id("laptopsImg")).Click();
-            Thread.Sleep(2500);
+            wait.Until(e => e.FindElement(By.Id("9")).Displayed);
             driver.FindElement(By.Id("9")).Click();
-            Thread.Sleep(2000);
+            wait.Until(e => e.FindElement(By.Name("save_to_cart")).Displayed);
             driver.FindElement(By.Name("save_to_cart")).Click();
             driver.Navigate().Back();
 
             driver.FindElement(By.Id("10")).Click();
-            Thread.Sleep(500);
+            wait.Until(e => e.FindElement(By.Name("save_to_cart")).Displayed);
             driver.FindElement(By.Name("save_to_cart")).Click();
 
             IWebElement cartIcon = driver.FindElement(By.Id("menuCart"));
