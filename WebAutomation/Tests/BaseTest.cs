@@ -35,7 +35,7 @@ namespace WebAutomation.tests
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1);
             driver.FindElement(By.Name("save_to_cart")).Click();
             driver.Navigate().Back();
-            System.Threading.Thread.Sleep(500);
+            Thread.Sleep(500);
             driver.Navigate().Back();
             driver.FindElement(By.Id("speakersImg")).Click();
             driver.FindElement(By.Id("24")).Click();
@@ -43,7 +43,7 @@ namespace WebAutomation.tests
             string cartNumber = driver.FindElement(By.XPath("/html/body/header/nav/ul/li[2]/a/span")).Text;
             string expectedCartNumber = "3";
             
-            Assert.AreEqual(expectedCartNumber, cartNumber);
+            Assert.That(expectedCartNumber, Is.EqualTo(cartNumber));
 
         }
 
@@ -54,7 +54,7 @@ namespace WebAutomation.tests
             IWebElement cartIcon = driver.FindElement(By.Id("menuCart"));
 
             driver.FindElement(By.Id("headphonesImg")).Click();
-            Thread.Sleep(2000);
+            Thread.Sleep(4000);
             driver.FindElement(By.Id("15")).Click();
             Thread.Sleep(1500);
             driver.FindElement(By.Name("save_to_cart")).Click();
@@ -84,10 +84,10 @@ namespace WebAutomation.tests
             string _firstProductExpectedQuantity = "QTY: 1";
             string _firstProductExpectedPrice = "$479.00";
 
-            Assert.AreEqual(firstProductName , _firstProductExpectedName);
-            Assert.AreEqual(firstProductColor , _firstProductExpectedColor);
-            Assert.AreEqual(firstProductQuantity , _firstProductExpectedQuantity);
-            Assert.AreEqual(firstProductPrice , _firstProductExpectedPrice);
+            Assert.That(firstProductName , Is.EqualTo(_firstProductExpectedName));
+            Assert.That(firstProductColor , Is.EqualTo(_firstProductExpectedColor));
+            Assert.That(firstProductQuantity , Is.EqualTo(_firstProductExpectedQuantity));
+            Assert.That(firstProductPrice , Is.EqualTo(_firstProductExpectedPrice));
 
 
             string secondProductName = driver.FindElement(By.XPath("//h3[text()='GAME OF THRONES']")).Text;
@@ -99,10 +99,10 @@ namespace WebAutomation.tests
             string _secondProductExpectedQuantity = "QTY: 1";
             string _secondProductExpectedPrice = "$10,000.00";
 
-            Assert.AreEqual(secondProductName , _secondProductExpectedName);
-            Assert.AreEqual(secondProductColor , _secondProductExpectedColor);
-            Assert.AreEqual(secondProductQuantity , _secondProductExpectedQuantity);
-            Assert.AreEqual(secondProductPrice , _secondProductExpectedPrice);
+            Assert.That(secondProductName , Is.EqualTo(_secondProductExpectedName));
+            Assert.That(secondProductColor , Is.EqualTo(_secondProductExpectedColor));
+            Assert.That(secondProductQuantity , Is.EqualTo(_secondProductExpectedQuantity));
+            Assert.That(secondProductPrice , Is.EqualTo(_secondProductExpectedPrice));
 
 
 
@@ -115,10 +115,10 @@ namespace WebAutomation.tests
             string _thirdProductExpectedQuantity = "QTY: 1";
             string _thirdProductExpectedPrice = "$179.99";
 
-            Assert.AreEqual(thirdProductName , _thirdProductExpectedName);
-            Assert.AreEqual(thirdProductColor , _thirdProductExpectedColor);
-            Assert.AreEqual(thirdProductQuantity , _thirdProductExpectedQuantity);
-            Assert.AreEqual(thirdProductPrice , _thirdProductExpectedPrice);
+            Assert.That(thirdProductName , Is.EqualTo(_thirdProductExpectedName));
+            Assert.That(thirdProductColor , Is.EqualTo(_thirdProductExpectedColor));
+            Assert.That(thirdProductQuantity , Is.EqualTo(_thirdProductExpectedQuantity));
+            Assert.That(thirdProductPrice , Is.EqualTo(_thirdProductExpectedPrice));
         }
 
 
@@ -126,6 +126,7 @@ namespace WebAutomation.tests
         [Test]
         public void Test3()
         {
+            Thread.Sleep(1500);
             driver.FindElement(By.Id("laptopsImg")).Click();
             Thread.Sleep(2500);
             driver.FindElement(By.Id("9")).Click();
@@ -146,9 +147,9 @@ namespace WebAutomation.tests
 
             driver.FindElement(By.XPath("//div[@class='removeProduct iconCss iconX']")).Click();
             string expectedNumberOfItemsAfterX = "1 Item";
-            Assert.AreNotEqual(numberOfItemsInCart , expectedNumberOfItemsAfterX);
+            Assert.That(numberOfItemsInCart , Is.Not.EqualTo(expectedNumberOfItemsAfterX));
             string expectedTitleOfCartItem = driver.FindElement(By.XPath("//h3[contains(text(), 'HP CHROMEBOOK 14 G1')]")).Text;
-            Assert.AreNotEqual(expectedTitleOfCartItem , itemToRemoveTitle);
+            Assert.That(expectedTitleOfCartItem , Is.Not.EqualTo(itemToRemoveTitle));
         }
 
 

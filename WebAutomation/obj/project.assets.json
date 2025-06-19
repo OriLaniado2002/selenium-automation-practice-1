@@ -365,6 +365,44 @@
           "build/netcoreapp3.1/NUnit3TestAdapter.props": {}
         }
       },
+      "Selenium.Support/4.33.0": {
+        "type": "package",
+        "dependencies": {
+          "Selenium.WebDriver": "4.33.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/WebDriver.Support.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/WebDriver.Support.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Selenium.WebDriver/4.33.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/WebDriver.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/WebDriver.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Selenium.WebDriver.targets": {}
+        }
+      },
+      "Selenium.WebDriver.ChromeDriver/137.0.7151.7000": {
+        "type": "package",
+        "build": {
+          "build/Selenium.WebDriver.ChromeDriver.targets": {}
+        }
+      },
       "System.Reflection.Metadata/1.6.0": {
         "type": "package",
         "compile": {
@@ -950,6 +988,66 @@
         "nunit_256.png"
       ]
     },
+    "Selenium.Support/4.33.0": {
+      "sha512": "AsjM8PqJkueDBzw9StEHLLUq6bT7au9IY9mMLlwMxOdNYfu7PMJOqpHCMg2xVtLrUHGd6mADqrbFxcs9QWe6JA==",
+      "type": "package",
+      "path": "selenium.support/4.33.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/netstandard2.0/WebDriver.Support.dll",
+        "lib/netstandard2.0/WebDriver.Support.xml",
+        "selenium.support.4.33.0.nupkg.sha512",
+        "selenium.support.nuspec"
+      ]
+    },
+    "Selenium.WebDriver/4.33.0": {
+      "sha512": "5dzwA1cMorwYWudX46zyeUqyZn48TZeCHbSERxbpKezGxZ8hMBpcL12XwG4RGUuQKGH8FiEOJOFK4eCE//uNpQ==",
+      "type": "package",
+      "path": "selenium.webdriver/4.33.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "build/Selenium.WebDriver.targets",
+        "buildTransitive/Selenium.WebDriver.targets",
+        "icon.png",
+        "lib/net8.0/WebDriver.dll",
+        "lib/net8.0/WebDriver.xml",
+        "lib/netstandard2.0/WebDriver.dll",
+        "lib/netstandard2.0/WebDriver.xml",
+        "manager/linux/selenium-manager",
+        "manager/macos/selenium-manager",
+        "manager/windows/selenium-manager.exe",
+        "selenium.webdriver.4.33.0.nupkg.sha512",
+        "selenium.webdriver.nuspec"
+      ]
+    },
+    "Selenium.WebDriver.ChromeDriver/137.0.7151.7000": {
+      "sha512": "9KuGL7vG0pOlX/W1AvlcUFt/cLWFsfQocRV5RArYlHZBrfA4fnoXkwH6xI2Z3ZB5BuPSSTLYZSH71o7IjYzNmg==",
+      "type": "package",
+      "path": "selenium.webdriver.chromedriver/137.0.7151.7000",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "README.md",
+        "build/DefinePropertiesChromeDriver.targets",
+        "build/Selenium.WebDriver.ChromeDriver.targets",
+        "driver/linux64/LICENSE.chromedriver",
+        "driver/linux64/chromedriver",
+        "driver/mac64/LICENSE.chromedriver",
+        "driver/mac64/chromedriver",
+        "driver/mac64arm/LICENSE.chromedriver",
+        "driver/mac64arm/chromedriver",
+        "driver/win32/LICENSE.chromedriver",
+        "driver/win32/chromedriver.exe",
+        "nupkg-icon.png",
+        "selenium.webdriver.chromedriver.137.0.7151.7000.nupkg.sha512",
+        "selenium.webdriver.chromedriver.nuspec"
+      ]
+    },
     "System.Reflection.Metadata/1.6.0": {
       "sha512": "COC1aiAJjCoA5GBF+QKL2uLqEBew4JsCkQmoHKbN3TlOZKa2fKLz5CpiRQKDz0RsAOEGsVKqOD5bomsXq/4STQ==",
       "type": "package",
@@ -978,23 +1076,26 @@
       "NUnit >= 3.14.0",
       "NUnit.Analyzers >= 3.9.0",
       "NUnit3TestAdapter >= 4.5.0",
+      "Selenium.Support >= 4.33.0",
+      "Selenium.WebDriver >= 4.33.0",
+      "Selenium.WebDriver.ChromeDriver >= 137.0.7151.7000",
       "coverlet.collector >= 6.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {}
+    "/Users/orilaniado/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\automation solo practice 1\\WebAutomation\\WebAutomation.csproj",
+      "projectUniqueName": "/Users/orilaniado/Documents/GitHub/selenium-automation-practice-1/WebAutomation/WebAutomation.csproj",
       "projectName": "WebAutomation",
-      "projectPath": "C:\\Users\\User\\Desktop\\automation solo practice 1\\WebAutomation\\WebAutomation.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\automation solo practice 1\\WebAutomation\\obj\\",
+      "projectPath": "/Users/orilaniado/Documents/GitHub/selenium-automation-practice-1/WebAutomation/WebAutomation.csproj",
+      "packagesPath": "/Users/orilaniado/.nuget/packages/",
+      "outputPath": "/Users/orilaniado/Documents/GitHub/selenium-automation-practice-1/WebAutomation/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/Users/orilaniado/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -1039,6 +1140,18 @@
             "target": "Package",
             "version": "[4.5.0, )"
           },
+          "Selenium.Support": {
+            "target": "Package",
+            "version": "[4.33.0, )"
+          },
+          "Selenium.WebDriver": {
+            "target": "Package",
+            "version": "[4.33.0, )"
+          },
+          "Selenium.WebDriver.ChromeDriver": {
+            "target": "Package",
+            "version": "[137.0.7151.7000, )"
+          },
           "coverlet.collector": {
             "target": "Package",
             "version": "[6.0.0, )"
@@ -1060,7 +1173,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
