@@ -1,3 +1,4 @@
+using System.Security.Cryptography.X509Certificates;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
@@ -5,10 +6,14 @@ using OpenQA.Selenium.Support.UI;
 public class HomePage
 {
     protected IWebDriver driver;
+    private BaseActions baseActions;
 
     public HomePage(IWebDriver driver)
     {
         this.driver = driver;
+        baseActions = new BaseActions(driver);
+        
+        baseActions.JustWait();
     }
 
     IWebElement home => driver.FindElement(By.XPath("/html/body/header/nav/div/a/span[1]"));
@@ -19,6 +24,7 @@ public class HomePage
     IWebElement laptops => driver.FindElement(By.Id("laptopsImg"));
     IWebElement menuCart => driver.FindElement(By.Id("menuCart"));
 
+    
     public void HeadphonesCatalog()
     {
         headphones.Click();
@@ -48,6 +54,11 @@ public class HomePage
     public void GoToCheckoutPage()
     {
         menuCart.Click();
+    }
+
+    public void GoToHome()
+    {
+        home.Click();
     }
 
     public void ShowCartItemWindow()

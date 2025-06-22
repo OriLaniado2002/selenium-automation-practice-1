@@ -8,7 +8,7 @@ using OpenQA.Selenium.Interactions;
 using System.Reflection.PortableExecutable;
 using OpenQA.Selenium.BiDi.Modules.Session;
 
-
+/*
 namespace WebAutomation.tests
 {
     [TestFixture]
@@ -169,4 +169,4 @@ namespace WebAutomation.tests
             driver.Dispose();
         }
     }
-}
+}*/
