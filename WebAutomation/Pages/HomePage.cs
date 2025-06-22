@@ -12,7 +12,7 @@ public class HomePage
     {
         this.driver = driver;
         baseActions = new BaseActions(driver);
-        
+
         baseActions.JustWait();
     }
 
@@ -24,7 +24,7 @@ public class HomePage
     IWebElement laptops => driver.FindElement(By.Id("laptopsImg"));
     IWebElement menuCart => driver.FindElement(By.Id("menuCart"));
 
-    
+
     public void HeadphonesCatalog()
     {
         headphones.Click();
@@ -65,5 +65,12 @@ public class HomePage
     {
         Actions actions = new Actions(driver);
         actions.MoveToElement(menuCart).Build().Perform();
+    }
+
+    public int FindTotalAboveCartIcon()
+    {
+        IWebElement numAboveCartIcon = driver.FindElement(By.XPath("//*[@id='shoppingCartLink']/span"));
+        int totalNum = Convert.ToInt32(numAboveCartIcon.Text);
+        return totalNum;
     }
 }

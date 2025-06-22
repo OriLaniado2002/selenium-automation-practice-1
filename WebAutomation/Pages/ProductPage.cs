@@ -15,14 +15,32 @@ public class ProductPage
         driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
     }
 
-    IWebElement mouseName => driver.FindElement(By.XPath("//*[@id='mobileDescription']/h1"));
     IWebElement addQuantityBtn => driver.FindElement(By.XPath("//*[@id='productProperties']/div[2]/e-sec-plus-minus/div/div[1]"));
     IWebElement substractQuantityBtn => driver.FindElement(By.XPath("//*[@id='productProperties']/div[2]/e-sec-plus-minus/div/div[3]"));
     IWebElement addToCartBtn => driver.FindElement(By.Name("save_to_cart"));
 
-    public string GetMouseName()
+    public string GetProductName(string XPathVariable)
     {
-        return mouseName.Text;
+        string productName = driver.FindElement(By.XPath(XPathVariable)).Text;
+        return productName;
+    }
+
+    public string GetProductColor(string XPathVariable)
+    {
+        string productColor = driver.FindElement(By.XPath(XPathVariable)).Text;
+        return productColor;
+    }
+
+    public string GetProductQuantity(string XPathVariable)
+    {
+        string productQuantity = driver.FindElement(By.XPath(XPathVariable)).Text;
+        return productQuantity;
+    }
+
+    public string GetProductPrice(string XPathVariable)
+    {
+        string productPrice = driver.FindElement(By.XPath(XPathVariable)).Text;
+        return productPrice;
     }
 
     public void AddQuantity()

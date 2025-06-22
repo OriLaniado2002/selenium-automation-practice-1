@@ -25,4 +25,9 @@ public class BaseActions
     {
         driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
     }
+
+    public void AssertEqual(string actualString, string expectedString)
+    {
+        Assert.That(actualString, Is.EqualTo(expectedString));
+    }
 }
