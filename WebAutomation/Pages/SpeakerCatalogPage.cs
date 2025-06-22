@@ -6,13 +6,11 @@ public class SpeakerCatalogPage
 {
     private IWebDriver driver;
     private HomePage homePage;
-    private BaseActions baseActions;
 
     public SpeakerCatalogPage(IWebDriver driver)
     {
         this.driver = driver;
         homePage = new HomePage(driver);
-        baseActions = new BaseActions(driver);
         WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
     }
 

@@ -1,10 +1,10 @@
 using OpenQA.Selenium;
 
-public class BaseActions
+public class NavigationActions
 {
     private IWebDriver driver;
 
-    public BaseActions(IWebDriver driver)
+    public NavigationActions(IWebDriver driver)
     {
         this.driver = driver;
     }
@@ -18,16 +18,10 @@ public class BaseActions
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             baseIndex++;
         }
-
     }
 
     public void JustWait()
     {
         driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-    }
-
-    public void AssertEqual(string actualString, string expectedString)
-    {
-        Assert.That(actualString, Is.EqualTo(expectedString));
     }
 }

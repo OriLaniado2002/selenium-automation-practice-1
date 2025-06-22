@@ -6,14 +6,14 @@ using OpenQA.Selenium.Support.UI;
 public class HomePage
 {
     protected IWebDriver driver;
-    private BaseActions baseActions;
+    private NavigationActions navigationActions;
 
     public HomePage(IWebDriver driver)
     {
         this.driver = driver;
-        baseActions = new BaseActions(driver);
+        navigationActions = new NavigationActions(driver);
 
-        baseActions.JustWait();
+        navigationActions.JustWait();
     }
 
     IWebElement home => driver.FindElement(By.XPath("/html/body/header/nav/div/a/span[1]"));

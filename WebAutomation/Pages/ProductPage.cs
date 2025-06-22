@@ -5,43 +5,19 @@ using OpenQA.Selenium.Support.UI;
 public class ProductPage
 {
     private IWebDriver driver;
-    private MiceCatalogPage miceCatalogPage;
+    private NavigationActions navigationActions;
 
     public ProductPage(IWebDriver driver)
     {
         this.driver = driver;
-        miceCatalogPage = new MiceCatalogPage(driver);
+        navigationActions = new NavigationActions(driver);
 
-        driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+        navigationActions.JustWait();
     }
 
     IWebElement addQuantityBtn => driver.FindElement(By.XPath("//*[@id='productProperties']/div[2]/e-sec-plus-minus/div/div[1]"));
     IWebElement substractQuantityBtn => driver.FindElement(By.XPath("//*[@id='productProperties']/div[2]/e-sec-plus-minus/div/div[3]"));
     IWebElement addToCartBtn => driver.FindElement(By.Name("save_to_cart"));
-
-    public string GetProductName(string XPathVariable)
-    {
-        string productName = driver.FindElement(By.XPath(XPathVariable)).Text;
-        return productName;
-    }
-
-    public string GetProductColor(string XPathVariable)
-    {
-        string productColor = driver.FindElement(By.XPath(XPathVariable)).Text;
-        return productColor;
-    }
-
-    public string GetProductQuantity(string XPathVariable)
-    {
-        string productQuantity = driver.FindElement(By.XPath(XPathVariable)).Text;
-        return productQuantity;
-    }
-
-    public string GetProductPrice(string XPathVariable)
-    {
-        string productPrice = driver.FindElement(By.XPath(XPathVariable)).Text;
-        return productPrice;
-    }
 
     public void AddQuantity()
     {

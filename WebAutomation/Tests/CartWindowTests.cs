@@ -5,6 +5,7 @@ using OpenQA.Selenium.DevTools.V135.Debugger;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using System;
+using System.Runtime.CompilerServices;
 
 
 [TestFixture]
@@ -14,10 +15,14 @@ public class CartWindowTests
     private HomePage homepage;
     private MiceCatalogPage miceCatalogPage;
     private ProductPage productPage;
-    private BaseActions baseActions;
+    private GetDetailsActions getDetailsActions;
     private SpeakerCatalogPage speakerCatalogPage;
     private HeadphonesCatalogPage headphonesCatalogPage;
     private TabletsCatalogPage tabletCatalogPage;
+    private LaptopsCatalogPage laptopsCatalogPage;
+    private CartWindowPage cartWindowPage;
+    private NavigationActions navigationActions;
+    private ComparisonActions comparisonActions;
 
 
     [SetUp]
@@ -27,10 +32,14 @@ public class CartWindowTests
         homepage = new HomePage(driver);
         miceCatalogPage = new MiceCatalogPage(driver);
         productPage = new ProductPage(driver);
-        baseActions = new BaseActions(driver);
+        getDetailsActions = new GetDetailsActions(driver);
         speakerCatalogPage = new SpeakerCatalogPage(driver);
         headphonesCatalogPage = new HeadphonesCatalogPage(driver);
         tabletCatalogPage = new TabletsCatalogPage(driver);
+        laptopsCatalogPage = new LaptopsCatalogPage(driver);
+        cartWindowPage = new CartWindowPage(driver);
+        navigationActions = new NavigationActions(driver);
+        comparisonActions = new ComparisonActions(driver);
 
         driver.Navigate().GoToUrl("https://www.advantageonlineshopping.com/#/");
         driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
@@ -62,7 +71,7 @@ public class CartWindowTests
         homepage.HeadphonesCatalog();
         headphonesCatalogPage.ChooseHeadphone15();
         productPage.AddToCart(1);
-        baseActions.NavigateBack(1);
+        navigationActions.NavigateBack(1);
         headphonesCatalogPage.ChooseHeadphone124();
         productPage.AddToCart(1);
         homepage.GoToHome();
@@ -71,32 +80,54 @@ public class CartWindowTests
         productPage.AddToCart(1);
         homepage.ShowCartItemWindow();
 
-        string firstProductName = productPage.GetProductName("//h3[text()='HP PRO TABLET 608 G1']");
-        string firstProductColor = productPage.GetProductColor("//span[text()='BLACK']");
-        string firstProductQuantity = productPage.GetProductQuantity("//label[text()='QTY: 1']");
-        string firstProductPrice = productPage.GetProductPrice("//p[text()='$479.00']");
-        baseActions.AssertEqual(firstProductName, "HP PRO TABLET 608 G1");
-        baseActions.AssertEqual(firstProductColor, "BLACK");
-        baseActions.AssertEqual(firstProductQuantity, "QTY: 1");
-        baseActions.AssertEqual(firstProductPrice, "$479.00");
+        string firstProductName = getDetailsActions.GetProductName("//h3[text()='HP PRO TABLET 608 G1']");
+        string firstProductColor = getDetailsActions.GetProductColor("//span[text()='BLACK']");
+        string firstProductQuantity = getDetailsActions.GetProductQuantity("//label[text()='QTY: 1']");
+        string firstProductPrice = getDetailsActions.GetProductPrice("//p[text()='$479.00']");
+        comparisonActions.AreEqual(firstProductName, "HP PRO TABLET 608 G1");
+        comparisonActions.AreEqual(firstProductColor, "BLACK");
+        comparisonActions.AreEqual(firstProductQuantity, "QTY: 1");
+        comparisonActions.AreEqual(firstProductPrice, "$479.00");
 
-        string secondProductName = productPage.GetProductName("//h3[text()='GAME OF THRONES']");
-        string secondProductColor = productPage.GetProductColor("//span[text()='PURPLE']");
-        string secondProductQuantity = productPage.GetProductQuantity("//label[text()='QTY: 1']");
-        string secondProductPrice = productPage.GetProductPrice("//p[text()='$10,000.00']");
-        baseActions.AssertEqual(secondProductName, "GAME OF THRONES");
-        baseActions.AssertEqual(secondProductColor, "PURPLE");
-        baseActions.AssertEqual(secondProductQuantity, "QTY: 1");
-        baseActions.AssertEqual(secondProductPrice, "$10,000.00");
+        string secondProductName = getDetailsActions.GetProductName("//h3[text()='GAME OF THRONES']");
+        string secondProductColor = getDetailsActions.GetProductColor("//span[text()='PURPLE']");
+        string secondProductQuantity = getDetailsActions.GetProductQuantity("//label[text()='QTY: 1']");
+        string secondProductPrice = getDetailsActions.GetProductPrice("//p[text()='$10,000.00']");
+        comparisonActions.AreEqual(secondProductName, "GAME OF THRONES");
+        comparisonActions.AreEqual(secondProductColor, "PURPLE");
+        comparisonActions.AreEqual(secondProductQuantity, "QTY: 1");
+        comparisonActions.AreEqual(secondProductPrice, "$10,000.00");
 
-        string thirdProductName = productPage.GetProductName("//h3[contains(text(),'BEATS STUDIO 2')]");
-        string thirdProductColor = productPage.GetProductColor("//span[text()='BLACK']");
-        string thirdProductQuantity = productPage.GetProductQuantity("//label[text()='QTY: 1']");
-        string thirdProductPrice = productPage.GetProductPrice("//p[text()='$179.99']");
-        baseActions.AssertEqual(thirdProductName, "BEATS STUDIO 2 OVER-EAR MAT...");
-        baseActions.AssertEqual(thirdProductColor, "BLACK");
-        baseActions.AssertEqual(thirdProductQuantity, "QTY: 1");
-        baseActions.AssertEqual(thirdProductPrice, "$179.99");
+        string thirdProductName = getDetailsActions.GetProductName("//h3[contains(text(),'BEATS STUDIO 2')]");
+        string thirdProductColor = getDetailsActions.GetProductColor("//span[text()='BLACK']");
+        string thirdProductQuantity = getDetailsActions.GetProductQuantity("//label[text()='QTY: 1']");
+        string thirdProductPrice = getDetailsActions.GetProductPrice("//p[text()='$179.99']");
+        comparisonActions.AreEqual(thirdProductName, "BEATS STUDIO 2 OVER-EAR MAT...");
+        comparisonActions.AreEqual(thirdProductColor, "BLACK");
+        comparisonActions.AreEqual(thirdProductQuantity, "QTY: 1");
+        comparisonActions.AreEqual(thirdProductPrice, "$179.99");
+    }
+
+    // 3. לאחר בחירה של לפחות שני מוצרים והסרה של מוצר אחד ע"י שימוש בחלונית עגלת הקניות למעלה מימון, יש לבדוק שהמוצר אכן נעלם מחלונית העגלה
+    [Test]
+    public void RemoveAnItemFromCartAndVerifyItsRemoval()
+    {
+        laptopsCatalogPage.OpenLaptopsCatalog();
+        laptopsCatalogPage.ChooseLaptop9();
+        productPage.AddToCart(1);
+        navigationActions.NavigateBack(1);
+        laptopsCatalogPage.ChooseLaptop10();
+        productPage.AddToCart(1);
+        homepage.ShowCartItemWindow();
+
+        string itemToRemove = getDetailsActions.GetProductName("//h3[text()='HP CHROMEBOOK 14 G1(ES)']");
+        string numberOfItemsInCart = cartWindowPage.FindTotalInCartWindow();
+        cartWindowPage.ClickRemoveFromWindow();
+
+        string expectedNumberOfItemsAfterX = "1 Item";
+        comparisonActions.AreNotEqual(numberOfItemsInCart, expectedNumberOfItemsAfterX);
+        string expectedTitleOfCartItem = getDetailsActions.GetProductName("//h3[contains(text(), 'HP CHROMEBOOK 14 G1')]");
+        comparisonActions.AreNotEqual(expectedTitleOfCartItem, itemToRemove);
     }
 
     [TearDown]
