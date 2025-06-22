@@ -36,8 +36,6 @@ public class CartWindowTests
     [Test]
     public void AddItemsInDifferentQuantitiesAndCheckOverallQuantity()
     {
-        WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-
         homepage.MiceCatalog();
         miceCatalogPage.ChooseMiceWithId28();
         productPage.AddToCart(2);
@@ -45,8 +43,6 @@ public class CartWindowTests
         homepage.SpeakersCatalog();
         speakerCatalogPage.ChooseSpeakerWithId24();
         productPage.AddToCart(1);
-
-        //driver.FindElement(By.Name("save_to_cart")).Click();
 
         string cartNumber = driver.FindElement(By.XPath("/html/body/header/nav/ul/li[2]/a/span")).Text;
         string expectedCartNumber = "3";
