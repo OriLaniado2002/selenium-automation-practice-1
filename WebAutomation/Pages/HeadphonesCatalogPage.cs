@@ -25,11 +25,11 @@ public class HeadphonesCatalogPage
         driver.FindElement(By.Id("15")).Click();
     }
 
-    public void ChooseHeadphone124()
+    public void ChooseHeadphone55()
     {
         WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
 
-        wait.Until(e => e.FindElement(By.Id("124")).Displayed);
-        driver.FindElement(By.Id("124")).Click();
+        wait.Until(e => e.FindElement(By.Id("55")).Displayed);
+        driver.FindElement(By.Id("55")).Click();
     }
 }

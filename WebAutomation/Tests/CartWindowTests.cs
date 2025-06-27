@@ -72,7 +72,7 @@ public class CartWindowTests
         headphonesCatalogPage.ChooseHeadphone15();
         productPage.AddToCart(1);
         navigationActions.NavigateBack(1);
-        headphonesCatalogPage.ChooseHeadphone124();
+        headphonesCatalogPage.ChooseHeadphone55();
         productPage.AddToCart(1);
         homepage.GoToHome();
         homepage.TabletsCatalog();
