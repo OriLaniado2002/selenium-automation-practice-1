@@ -39,7 +39,7 @@ public class CartWindowTests
         laptopsCatalogPage = new LaptopsCatalogPage(driver);
         cartWindowPage = new CartWindowPage(driver);
         navigationActions = new NavigationActions(driver);
-        comparisonActions = new ComparisonActions(driver);
+        comparisonActions = new ComparisonActions();
 
         driver.Navigate().GoToUrl("https://www.advantageonlineshopping.com/#/");
         driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
