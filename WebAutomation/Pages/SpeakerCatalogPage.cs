@@ -14,10 +14,7 @@ public class SpeakerCatalogPage
         WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
     }
 
-    public void OpenSpeakersCatalog()
-    {
-        homePage.SpeakersCatalog();
-    }
+    public void OpenSpeakersCatalog() => homePage.SpeakersCatalog();
 
     public void ChooseSpeakerWithId24()
     {

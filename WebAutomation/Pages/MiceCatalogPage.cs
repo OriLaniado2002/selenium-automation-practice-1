@@ -15,10 +15,7 @@ public class MiceCatalogPage
         this.driver = driver;
         homepage = new HomePage(driver);
     }
-    public void OpenMiceCatalog()
-    {
-        homepage.MiceCatalog();
-    }
+    public void OpenMiceCatalog() => homepage.MiceCatalog();
     public void ChooseMiceWithId28()
     {
         WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));

@@ -12,10 +12,7 @@ public class TabletsCatalogPage
         homePage = new HomePage(driver);
     }
 
-    public void OpenTabletsCatalog()
-    {
-        homePage.TabletsCatalog();
-    }
+    public void OpenTabletsCatalog() => homePage.TabletsCatalog();
 
     public void ChooseTablet18()
     {

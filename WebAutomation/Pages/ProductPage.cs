@@ -15,28 +15,14 @@ public class ProductPage
         navigationActions.JustWait();
     }
 
-    IWebElement addQuantityBtn => driver.FindElement(By.XPath("//*[@id='productProperties']/div[2]/e-sec-plus-minus/div/div[1]"));
-    IWebElement substractQuantityBtn => driver.FindElement(By.XPath("//*[@id='productProperties']/div[2]/e-sec-plus-minus/div/div[3]"));
-    IWebElement addToCartBtn => driver.FindElement(By.Name("save_to_cart"));
+    protected IWebElement addQuantityBtn => driver.FindElement(By.XPath("//*[@id='productProperties']/div[2]/e-sec-plus-minus/div/div[1]"));
+    protected IWebElement substractQuantityBtn => driver.FindElement(By.XPath("//*[@id='productProperties']/div[2]/e-sec-plus-minus/div/div[3]"));
+    protected IWebElement addToCartBtn => driver.FindElement(By.Name("save_to_cart"));
+    protected IWebElement topTitleProductName => driver.FindElement(By.XPath("/html/body//h1[text()=' GAME OF THRONES ']"));
+    protected IWebElement topTitleProductPrice => driver.FindElement(By.XPath("//h2[contains(normalize-space(.), '$10,000.00')]"));
 
-    public void AddQuantity()
-    {
-        addQuantityBtn.Click();
-    }
 
-    public void SubstractQuantity()
-    {
-        substractQuantityBtn.Click();
-    }
+    public string GetTopTitleProductName() => topTitleProductName.Text;
+    public string GetTopTitleProductPrice() => topTitleProductPrice.Text;
 
-    public void AddToCart(int numberOfAddsToCart)
-    {
-        int baseAddToCartIndex = 0;
-        while (baseAddToCartIndex < numberOfAddsToCart)
-        {
-            addToCartBtn.Click();
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-            baseAddToCartIndex++;
-        }
-    }
 }

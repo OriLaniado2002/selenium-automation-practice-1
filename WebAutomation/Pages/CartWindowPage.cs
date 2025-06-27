@@ -14,21 +14,8 @@ public class CartWindowPage
     IWebElement totalOfItemsInWindow => driver.FindElement(By.XPath("//*[@id='toolTipCart']/div/table/tfoot/tr[1]/td[1]/span/label"));
     IWebElement checkOutBtn => driver.FindElement(By.Id("checkOutPopUp"));
 
-
-    public void ClickRemoveFromWindow()
-    {
-        removeItemFromWindowBtn.Click();
-    }
-
-    public string FindTotalInCartWindow()
-    {
-        string total = totalOfItemsInWindow.Text;
-        return total;
-    }
-
-    public void ClickCheckoutBtn()
-    {
-        checkOutBtn.Click();
-    }
+    public void ClickRemoveFromWindow() => removeItemFromWindowBtn.Click();
+    public string FindTotalInCartWindow() => totalOfItemsInWindow.Text;
+    public void ClickCheckoutBtn() => checkOutBtn.Click();
 
 }

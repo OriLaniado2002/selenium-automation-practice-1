@@ -25,42 +25,13 @@ public class HomePage
     IWebElement menuCart => driver.FindElement(By.Id("menuCart"));
 
 
-    public void HeadphonesCatalog()
-    {
-        headphones.Click();
-
-    }
-
-    public void TabletsCatalog()
-    {
-        tablets.Click();
-    }
-
-    public void MiceCatalog()
-    {
-        mice.Click();
-    }
-
-    public void SpeakersCatalog()
-    {
-        speakers.Click();
-    }
-
-    public void LaptopsCatalog()
-    {
-        laptops.Click();
-    }
-
-    public void GoToCheckoutPage()
-    {
-        menuCart.Click();
-    }
-
-    public void GoToHome()
-    {
-        home.Click();
-    }
-
+    public void HeadphonesCatalog() => headphones.Click();
+    public void TabletsCatalog() => tablets.Click();
+    public void MiceCatalog() => mice.Click();
+    public void SpeakersCatalog() => speakers.Click();
+    public void LaptopsCatalog() => laptops.Click();
+    public void GoToCheckoutPage() => menuCart.Click();
+    public void GoToHome() => home.Click();
     public void ShowCartItemWindow()
     {
         Actions actions = new Actions(driver);

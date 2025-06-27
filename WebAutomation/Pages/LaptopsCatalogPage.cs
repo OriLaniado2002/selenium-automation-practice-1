@@ -12,10 +12,7 @@ public class LaptopsCatalogPage
         homePage = new HomePage(driver);
     }
 
-    public void OpenLaptopsCatalog()
-    {
-        homePage.LaptopsCatalog();
-    }
+    public void OpenLaptopsCatalog() => homePage.LaptopsCatalog();
 
     public void ChooseLaptop9()
     {

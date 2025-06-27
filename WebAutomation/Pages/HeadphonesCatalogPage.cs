@@ -12,10 +12,7 @@ public class HeadphonesCatalogPage
         homePage = new HomePage(driver);
     }
 
-    public void OpenHeadphonesCatalog()
-    {
-        homePage.HeadphonesCatalog();
-    }
+    public void OpenHeadphonesCatalog() => homePage.HeadphonesCatalog();
 
     public void ChooseHeadphone15()
     {
