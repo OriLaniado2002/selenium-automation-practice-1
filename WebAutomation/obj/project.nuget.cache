@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HzFN3loaSDQ=",
+  "dgSpecHash": "9c4RSbM+6FE=",
   "success": true,
-  "projectFilePath": "/Users/orilaniado/Documents/GitHub/selenium-automation-practice-1/WebAutomation/WebAutomation.csproj",
+  "projectFilePath": "/Users/orilaniado/Desktop/selenium-automation-practice-1/WebAutomation/WebAutomation.csproj",
   "expectedPackageFiles": [
     "/Users/orilaniado/.nuget/packages/coverlet.collector/6.0.0/coverlet.collector.6.0.0.nupkg.sha512",
     "/Users/orilaniado/.nuget/packages/microsoft.codecoverage/17.8.0/microsoft.codecoverage.17.8.0.nupkg.sha512",
