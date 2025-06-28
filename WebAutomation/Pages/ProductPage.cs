@@ -21,8 +21,4 @@ public class ProductPage
     protected IWebElement topTitleProductName => driver.FindElement(By.XPath("/html/body//h1[text()=' GAME OF THRONES ']"));
     protected IWebElement topTitleProductPrice => driver.FindElement(By.XPath("//h2[contains(normalize-space(.), '$10,000.00')]"));
 
-
-    public string GetTopTitleProductName() => topTitleProductName.Text;
-    public string GetTopTitleProductPrice() => topTitleProductPrice.Text;
-
 }
