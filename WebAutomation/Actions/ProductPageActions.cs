@@ -13,8 +13,8 @@ public class ProductPageActions : ProductPage
     }
 
     public void AddQuantity() => addQuantityBtn.Click();
-    public void SubstractQuantity() => substractQuantityBtn.Click();
-    
+    public void SubtractQuantity() => substractQuantityBtn.Click();
+
     public string GetTopTitleProductName() => topTitleProductName.Text;
     public string GetTopTitleProductPrice() => topTitleProductPrice.Text;
 
