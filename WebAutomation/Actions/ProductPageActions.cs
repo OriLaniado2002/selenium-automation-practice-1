@@ -1,5 +1,6 @@
 using OpenQA.Selenium;
 using System;
+using OpenQA.Selenium.Support.UI;
 
 
 public class ProductPageActions : ProductPage
@@ -23,8 +24,10 @@ public class ProductPageActions : ProductPage
         int baseAddToCartIndex = 0;
         while (baseAddToCartIndex < numberOfAddsToCart)
         {
+            WebDriverWait wait = new WebDriverWait (driver, TimeSpan.FromSeconds(10));
+
             addToCartBtn.Click();
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            wait.Until(e => e.FindElement(By.Name("save_to_cart")).Displayed);
             baseAddToCartIndex++;
         }
     }
