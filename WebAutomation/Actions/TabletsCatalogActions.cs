@@ -16,11 +16,11 @@ public class TabletsCatalogActions : TabletsCatalogPage
 
     public void OpenTabletsCatalog() => homePageActions.TabletsCatalog();
 
-    public void ChooseTablet18()
+    public void ChooseTabletById(string tabletId)
     {
         WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
 
-        wait.Until(e => e.FindElement(By.Id("18")).Displayed);
-        driver.FindElement(By.Id("18")).Click();
+        wait.Until(e => e.FindElement(By.Id(tabletId)).Displayed);
+        driver.FindElement(By.Id(tabletId)).Click();
     }
 }

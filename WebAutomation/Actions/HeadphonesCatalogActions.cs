@@ -17,19 +17,11 @@ public class HeadphonesCatalogActions : HeadphonesCatalogPage
 
     public void OpenHeadphonesCatalog() => homePageActions.HeadphonesCatalog();
 
-    public void ChooseHeadphone15()
+    public void ChooseHeadphoneById(string headphoneId)
     {
-        WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+        WebDriverWait wait = new WebDriverWait (driver, TimeSpan.FromSeconds(10));
 
-        wait.Until(e => e.FindElement(By.Id("15")).Displayed);
-        driver.FindElement(By.Id("15")).Click();
-    }
-
-    public void ChooseHeadphone55()
-    {
-        WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-
-        wait.Until(e => e.FindElement(By.Id("55")).Displayed);
-        driver.FindElement(By.Id("55")).Click();
+        wait.Until(e => e.FindElement(By.Id(headphoneId)).Displayed);
+        driver.FindElement(By.Id(headphoneId)).Click();
     }
 }

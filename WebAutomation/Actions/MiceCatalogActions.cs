@@ -16,11 +16,12 @@ public class MiceCatalogActions : MiceCatalogPage
     }
 
     public void OpenMiceCatalog() => homePageActions.MiceCatalog();
-    public void ChooseMiceWithId28()
+
+    public void ChooseMiceWithById(string miceId)
     {
         WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
         OpenMiceCatalog();
-        wait.Until(e => e.FindElement(By.Id("28")));
-        driver.FindElement(By.Id("28")).Click();
+        wait.Until(e => e.FindElement(By.Id(miceId)));
+        driver.FindElement(By.Id(miceId)).Click();
     }
 }

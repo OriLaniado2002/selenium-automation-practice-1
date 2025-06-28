@@ -49,11 +49,11 @@ public class CartWindowTests
     public void AddItemsInDifferentQuantitiesAndCheckOverallQuantity()
     {
         homePageActions.MiceCatalog();
-        miceCatalogActions.ChooseMiceWithId28();
+        miceCatalogActions.ChooseMiceWithById("28");
         productPageActions.AddToCart(2);
         homePageActions.GoToHome();
         homePageActions.SpeakersCatalog();
-        speakersCatalogActions.ChooseSpeakerWithId24();
+        speakersCatalogActions.ChooseSpeakerWithById("24");
         productPageActions.AddToCart(1);
 
         int cartNumber = homePageActions.FindTotalAboveCartIcon();
@@ -67,14 +67,14 @@ public class CartWindowTests
     public void VerifyDetailsForDifferentItemsInCartWindow()
     {
         homePageActions.HeadphonesCatalog();
-        headphonesCatalogActions.ChooseHeadphone15();
+        headphonesCatalogActions.ChooseHeadphoneById("15");
         productPageActions.AddToCart(1);
         navigationActions.NavigateBack(1);
-        headphonesCatalogActions.ChooseHeadphone55();
+        headphonesCatalogActions.ChooseHeadphoneById("55");
         productPageActions.AddToCart(1);
         homePageActions.GoToHome();
         homePageActions.TabletsCatalog();
-        tabletsCatalogActions.ChooseTablet18();
+        tabletsCatalogActions.ChooseTabletById("18");
         productPageActions.AddToCart(1);
         homePageActions.ShowCartItemWindow();
 
@@ -111,10 +111,10 @@ public class CartWindowTests
     public void RemoveAnItemFromCartAndVerifyItsRemoval()
     {
         laptopsCatalogActions.OpenLaptopsCatalog();
-        laptopsCatalogActions.ChooseLaptop9();
+        laptopsCatalogActions.ChooseLaptopById("9");
         productPageActions.AddToCart(1);
         navigationActions.NavigateBack(1);
-        laptopsCatalogActions.ChooseLaptop10();
+        laptopsCatalogActions.ChooseLaptopById("10");
         productPageActions.AddToCart(1);
         homePageActions.ShowCartItemWindow();
 

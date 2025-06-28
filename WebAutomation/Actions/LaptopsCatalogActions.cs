@@ -16,19 +16,11 @@ public class LaptopsCatalogActions : LaptopsCatalogPage
 
     public void OpenLaptopsCatalog() => homePageActions.LaptopsCatalog();
 
-    public void ChooseLaptop9()
+    public void ChooseLaptopById(string laptopId)
     {
-        WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+        WebDriverWait wait = new WebDriverWait (driver, TimeSpan.FromSeconds(10));
 
-        wait.Until(e => e.FindElement(By.Id("9")).Displayed);
-        driver.FindElement(By.Id("9")).Click();
-    }
-
-    public void ChooseLaptop10()
-    {
-        WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-
-        wait.Until(e => e.FindElement(By.Id("10")).Displayed);
-        driver.FindElement(By.Id("10")).Click();
+        wait.Until(e => e.FindElement(By.Id(laptopId)).Displayed);
+        driver.FindElement(By.Id(laptopId)).Click();
     }
 }

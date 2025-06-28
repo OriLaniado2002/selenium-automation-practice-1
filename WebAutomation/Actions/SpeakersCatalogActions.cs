@@ -16,10 +16,10 @@ public class SpeakersCatalogActions : SpeakersCatalogPage
 
     public void OpenSpeakersCatalog() => homePageActions.SpeakersCatalog();
 
-    public void ChooseSpeakerWithId24()
+    public void ChooseSpeakerWithById(string speakerId)
     {
         WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-        wait.Until(e => e.FindElement(By.Id("24")));
-        driver.FindElement(By.Id("24")).Click();
+        wait.Until(e => e.FindElement(By.Id(speakerId)));
+        driver.FindElement(By.Id(speakerId)).Click();
     }
 }
