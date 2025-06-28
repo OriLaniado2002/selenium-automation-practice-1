@@ -1,27 +1,16 @@
 using OpenQA.Selenium;
-using OpenQA.Selenium.BiDi.Modules.BrowsingContext;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.DevTools.V135.Network;
-using OpenQA.Selenium.Support.UI;
-
 
 public class MiceCatalogPage
 {
     private IWebDriver driver;
-    private HomePage homepage;
 
     public MiceCatalogPage(IWebDriver driver)
     {
         this.driver = driver;
-        homepage = new HomePage(driver);
     }
-    public void OpenMiceCatalog() => homepage.MiceCatalog();
-    public void ChooseMiceWithId28()
-    {
-        WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-        OpenMiceCatalog();
-        wait.Until(e => e.FindElement(By.Id("28")));
-        driver.FindElement(By.Id("28")).Click();
-    }
+
+    protected IWebElement miceCatalogHeaderTitle => driver.FindElement(By.XPath("//h1[normalize-space(text())='DISCOVER OUR WIRELESS MICE']"));
+    protected IWebElement miceCatalogHeaderText => driver.FindElement(By.XPath("//h2[normalize-space(text())='designed to work and ready to play']"));
+    protected IWebElement miceCatalogHeaderSubtext => driver.FindElement(By.XPath("//h3[normalize-space(.)='HP Z3200 Wireless Mouse | Starting at $29.99']"));
 
 }

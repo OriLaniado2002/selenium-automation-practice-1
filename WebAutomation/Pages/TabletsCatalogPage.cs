@@ -1,24 +1,16 @@
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
 
 public class TabletsCatalogPage
 {
     private IWebDriver driver;
-    private HomePage homePage;
 
     public TabletsCatalogPage(IWebDriver driver)
     {
         this.driver = driver;
-        homePage = new HomePage(driver);
     }
 
-    public void OpenTabletsCatalog() => homePage.TabletsCatalog();
+    protected IWebElement tabletsCatalogHeaderTitle => driver.FindElement(By.XPath("//h1[normalize-space(text())='TRAVEL CONFIDENTLY AND IN STYLE']"));
+    protected IWebElement tabletsCatalogHeaderText => driver.FindElement(By.XPath("//h2[normalize-space(text())='Built for durability and mobility']"));
+    protected IWebElement tabletsCatalogHeaderSubtext => driver.FindElement(By.XPath("//h3[normalize-space(text())='HP ElitePad 1000 G2 Tablet | Starting at $1429']"));
 
-    public void ChooseTablet18()
-    {
-        WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-
-        wait.Until(e => e.FindElement(By.Id("18")).Displayed);
-        driver.FindElement(By.Id("18")).Click();
-    }
 }

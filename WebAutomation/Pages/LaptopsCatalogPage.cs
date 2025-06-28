@@ -1,32 +1,17 @@
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
 
 public class LaptopsCatalogPage
 {
     private IWebDriver driver;
-    private HomePage homePage;
 
     public LaptopsCatalogPage(IWebDriver driver)
     {
         this.driver = driver;
-        homePage = new HomePage(driver);
     }
 
-    public void OpenLaptopsCatalog() => homePage.LaptopsCatalog();
+    protected IWebElement laptopsCatalogHeaderTitle => driver.FindElement(By.XPath("//h1[normalize-space(text())='EXPLORE THE NEW DESIGN']"));
+    protected IWebElement laptopsCatalogHeaderText => driver.FindElement(By.XPath("//h2[normalize-space(text())='Supremely thin, yet incredibly durable']"));
+    protected IWebElement laptopsCatalogHeaderSubtext => driver.FindElement(By.XPath("//h3[normalize-space(.)='HP Pavilion 15z Touch Laptop | Starting at $650']"));
+    protected IWebElement headerBuyNowBtn => driver.FindElement(By.Name("buy_now"));
 
-    public void ChooseLaptop9()
-    {
-        WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-
-        wait.Until(e => e.FindElement(By.Id("9")).Displayed);
-        driver.FindElement(By.Id("9")).Click();
-    }
-
-    public void ChooseLaptop10()
-    {
-        WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-
-        wait.Until(e => e.FindElement(By.Id("10")).Displayed);
-        driver.FindElement(By.Id("10")).Click();
-    }
 }

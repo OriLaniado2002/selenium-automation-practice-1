@@ -1,31 +1,19 @@
 using OpenQA.Selenium;
 using System;
 
-
-public class ProductActions : ProductPage
+public class CartWindowActions : CartWindowPage
 {
-    private IWebDriver driver;
-    private ProductPage productPage;
-    public ProductActions(IWebDriver driver) : base(driver)
+
+    private CartWindowPage cartWindowPage;
+    public CartWindowActions(IWebDriver driver) : base(driver)
     {
         this.driver = driver;
-        productPage = new ProductPage(driver);
+        cartWindowPage = new CartWindowPage(driver);
     }
 
-    public void AddQuantity() => addQuantityBtn.Click();
-
-    public void SubstractQuantity() => substractQuantityBtn.Click();
-
-    public void AddToCart(int numberOfAddsToCart)
-    {
-        int baseAddToCartIndex = 0;
-        while (baseAddToCartIndex < numberOfAddsToCart)
-        {
-            addToCartBtn.Click();
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-            baseAddToCartIndex++;
-        }
-    }
+    public void ClickRemoveFromWindow() => removeItemFromWindowBtn.Click();
+    public string FindTotalInCartWindow() => totalOfItemsInWindow.Text;
+    public void ClickCheckoutBtn() => checkOutBtn.Click();
 
     public string GetProductName(string XPathVariable)
     {
