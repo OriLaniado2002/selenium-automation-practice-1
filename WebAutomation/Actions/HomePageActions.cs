@@ -5,6 +5,7 @@ using OpenQA.Selenium.Interactions;
 
 public class HomePageActions : HomePage
 {
+    private IWebDriver driver;
     private HomePage homePage;
 
     public HomePageActions(IWebDriver driver) : base(driver)

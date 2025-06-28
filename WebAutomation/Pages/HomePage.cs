@@ -5,7 +5,7 @@ using OpenQA.Selenium.Support.UI;
 
 public class HomePage
 {
-    protected IWebDriver driver;
+    private IWebDriver driver;
     private NavigationActions navigationActions;
 
     public HomePage(IWebDriver driver)
