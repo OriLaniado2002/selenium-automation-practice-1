@@ -21,14 +21,12 @@ public class ProductPageActions : ProductPage
 
     public void AddToCart(int numberOfAddsToCart)
     {
-        int baseAddToCartIndex = 0;
-        while (baseAddToCartIndex < numberOfAddsToCart)
+        for (int i = 0; i < numberOfAddsToCart; i++)
         {
             WebDriverWait wait = new WebDriverWait (driver, TimeSpan.FromSeconds(10));
 
-            addToCartBtn.Click();
             wait.Until(e => e.FindElement(By.Name("save_to_cart")).Displayed);
-            baseAddToCartIndex++;
+            addToCartBtn.Click();
         }
     }
 
