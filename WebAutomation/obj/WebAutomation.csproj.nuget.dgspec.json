@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/orilaniado/Documents/GitHub/selenium-automation-practice-1/WebAutomation/WebAutomation.csproj": {}
+    "/Users/orilaniado/Desktop/selenium-automation-practice-1/WebAutomation/WebAutomation.csproj": {}
   },
   "projects": {
-    "/Users/orilaniado/Documents/GitHub/selenium-automation-practice-1/WebAutomation/WebAutomation.csproj": {
+    "/Users/orilaniado/Desktop/selenium-automation-practice-1/WebAutomation/WebAutomation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/orilaniado/Documents/GitHub/selenium-automation-practice-1/WebAutomation/WebAutomation.csproj",
+        "projectUniqueName": "/Users/orilaniado/Desktop/selenium-automation-practice-1/WebAutomation/WebAutomation.csproj",
         "projectName": "WebAutomation",
-        "projectPath": "/Users/orilaniado/Documents/GitHub/selenium-automation-practice-1/WebAutomation/WebAutomation.csproj",
+        "projectPath": "/Users/orilaniado/Desktop/selenium-automation-practice-1/WebAutomation/WebAutomation.csproj",
         "packagesPath": "/Users/orilaniado/.nuget/packages/",
-        "outputPath": "/Users/orilaniado/Documents/GitHub/selenium-automation-practice-1/WebAutomation/obj/",
+        "outputPath": "/Users/orilaniado/Desktop/selenium-automation-practice-1/WebAutomation/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/orilaniado/.nuget/NuGet/NuGet.Config"
