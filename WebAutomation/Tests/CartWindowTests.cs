@@ -49,7 +49,7 @@ public class CartWindowTests
     public void AddItemsInDifferentQuantitiesAndCheckOverallQuantity()
     {
         homePageActions.MiceCatalog();
-        miceCatalogActions.ChooseMiceWithById("28");
+        miceCatalogActions.ChooseMiceById("28");
         productPageActions.AddToCart(2);
         homePageActions.GoToHome();
         homePageActions.SpeakersCatalog();
