@@ -6,11 +6,12 @@ using System.Runtime.CompilerServices;
 
 
 [TestFixture]
+[Description("Tests related to the cart window page")]
 public class CartWindowTests : BaseCartWindow
 {
 
-    // 1. לאחר בחירה של לפחות שני מוצרים, בכמויות שונות, לבדוק שכמות המוצרים הסופית מופיעה נכון ומדוייקת בחלונית עגלת הקניות בצד ימין למעלה של המסך
     [Test]
+    [Description("לאחר בחירה של לפחות שני מוצרים, בכמויות שונות, לבדוק שכמות המוצרים הסופית מופיעה נכון ומדוייקת בחלונית עגלת הקניות בצד ימין למעלה של המסך")]
     public void AddItemsInDifferentQuantitiesAndCheckOverallQuantity()
     {
         homePageActions.MiceCatalog();
@@ -27,8 +28,8 @@ public class CartWindowTests : BaseCartWindow
 
     }
 
-    // 2. לאחר בחירה של 3 מוצרים, בכמויות שונות, יש בלדוק שהמוצרים מופיעים נכון: כולל שם, צבע, כמות ומחיר בחלונית עגלת הקניות בצד ימין למעלה של המסך
     [Test]
+    [Description("לאחר בחירה של 3 מוצרים, בכמויות שונות, יש בלדוק שהמוצרים מופיעים נכון: כולל שם, צבע, כמות ומחיר בחלונית עגלת הקניות בצד ימין למעלה של המסך")]
     public void VerifyDetailsForDifferentItemsInCartWindow()
     {
         homePageActions.HeadphonesCatalog();
@@ -71,8 +72,8 @@ public class CartWindowTests : BaseCartWindow
         baseActions.AreEqual(thirdProductPrice, "$179.99");
     }
 
-    // 3. לאחר בחירה של לפחות שני מוצרים והסרה של מוצר אחד ע"י שימוש בחלונית עגלת הקניות למעלה מימון, יש לבדוק שהמוצר אכן נעלם מחלונית העגלה
     [Test]
+    [Description("לאחר בחירה של לפחות שני מוצרים והסרה של מוצר אחד על ידי שימוש בחלונית עגלת הקניות למעלה מימון, יש לבדוק שהמוצר אכן נעלם מחלונית העגלה")]
     public void RemoveAnItemFromCartAndVerifyItsRemoval()
     {
         laptopsCatalogActions.OpenLaptopsCatalog();
