@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "9c4RSbM+6FE=",
+  "dgSpecHash": "WEQva8y0hv4=",
   "success": true,
   "projectFilePath": "/Users/orilaniado/Desktop/selenium-automation-practice-1/WebAutomation/WebAutomation.csproj",
   "expectedPackageFiles": [
     "/Users/orilaniado/.nuget/packages/coverlet.collector/6.0.0/coverlet.collector.6.0.0.nupkg.sha512",
+    "/Users/orilaniado/.nuget/packages/dotnetseleniumextras.waithelpers/3.11.0/dotnetseleniumextras.waithelpers.3.11.0.nupkg.sha512",
     "/Users/orilaniado/.nuget/packages/microsoft.codecoverage/17.8.0/microsoft.codecoverage.17.8.0.nupkg.sha512",
     "/Users/orilaniado/.nuget/packages/microsoft.net.test.sdk/17.8.0/microsoft.net.test.sdk.17.8.0.nupkg.sha512",
     "/Users/orilaniado/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",

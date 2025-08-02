@@ -42,9 +42,4 @@ public class BaseActions
         WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
         wait.Until(e => e.FindElement(By.XPath(XPathVariable)).Displayed);
     }
-
-    public void SleepWait(int seconds)
-    {
-        System.Threading.Thread.Sleep(seconds * 1000);
-    }
 }
