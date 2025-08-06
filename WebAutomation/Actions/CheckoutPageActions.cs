@@ -45,4 +45,9 @@ public class CheckoutPageActions : CheckoutPage
             }
         }
     }
+
+    public bool IsCheckoutPageDisplayed()
+    {
+        return pageTitle.Displayed;
+    }
 }

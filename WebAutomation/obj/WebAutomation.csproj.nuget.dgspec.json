@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/orilaniado/Desktop/selenium-automation-practice-1/WebAutomation/WebAutomation.csproj": {}
+    "C:\\Users\\User\\Desktop\\automation solo practice 1\\WebAutomation\\WebAutomation.csproj": {}
   },
   "projects": {
-    "/Users/orilaniado/Desktop/selenium-automation-practice-1/WebAutomation/WebAutomation.csproj": {
+    "C:\\Users\\User\\Desktop\\automation solo practice 1\\WebAutomation\\WebAutomation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/orilaniado/Desktop/selenium-automation-practice-1/WebAutomation/WebAutomation.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\automation solo practice 1\\WebAutomation\\WebAutomation.csproj",
         "projectName": "WebAutomation",
-        "projectPath": "/Users/orilaniado/Desktop/selenium-automation-practice-1/WebAutomation/WebAutomation.csproj",
-        "packagesPath": "/Users/orilaniado/.nuget/packages/",
-        "outputPath": "/Users/orilaniado/Desktop/selenium-automation-practice-1/WebAutomation/obj/",
+        "projectPath": "C:\\Users\\User\\Desktop\\automation solo practice 1\\WebAutomation\\WebAutomation.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\automation solo practice 1\\WebAutomation\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/orilaniado/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -96,7 +96,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
