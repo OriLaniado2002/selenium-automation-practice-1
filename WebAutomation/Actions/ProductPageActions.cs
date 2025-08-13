@@ -17,7 +17,26 @@ public class ProductPageActions : ProductPage
     public void SubtractQuantity() => substractQuantityBtn.Click();
 
     public string GetTopTitleProductName() => topTitleProductName.Text;
-    public string GetTopTitleProductPrice() => topTitleProductPrice.Text;
+
+    public double ReturnProductPriceAsDouble()
+    {
+        string XPathVariable = "//h2[@class='roboto-thin screen768 ng-binding']";
+        IWebElement productPageDisplayedPrice = driver.FindElement(By.XPath(XPathVariable));
+        string priceText = productPageDisplayedPrice.Text.Trim();
+        priceText = priceText.Replace("$" , "");
+
+        double productPriceDoubleNum = Convert.ToDouble(priceText);
+        return productPriceDoubleNum;
+    }
+
+    public string ReturnProductPriceAsString()
+    {
+        string XPathVariable = "//h2[@class='roboto-thin screen768 ng-binding']";
+        IWebElement productPageDisplayedPrice = driver.FindElement(By.XPath(XPathVariable));
+        string priceText = productPageDisplayedPrice.Text.Trim();
+
+        return priceText;
+    }
 
     public void AddToCart(int numberOfAddsToCart)
     {

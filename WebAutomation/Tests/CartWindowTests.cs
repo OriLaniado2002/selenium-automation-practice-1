@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 [TestFixture]
 [Description("Tests related to the cart window page")]
 public class CartWindowTests : BaseCartWindow
-{/*
+{
 
     [Test]
     [Description("לאחר בחירה של לפחות שני מוצרים, בכמויות שונות, לבדוק שכמות המוצרים הסופית מופיעה נכון ומדוייקת בחלונית עגלת הקניות בצד ימין למעלה של המסך")]
@@ -92,6 +92,6 @@ public class CartWindowTests : BaseCartWindow
         baseActions.AreNotEqual(numberOfItemsInCart, expectedNumberOfItemsAfterX);
         string expectedTitleOfCartItem = cartWindowActions.GetProductName("//h3[contains(text(), 'HP CHROMEBOOK 14 G1')]");
         baseActions.AreNotEqual(expectedTitleOfCartItem, itemToRemove);
-    }*/
+    }
 
 }

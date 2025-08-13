@@ -15,7 +15,6 @@ public class BaseCartWindow : BaseCommon
     {
         try
         {
-            homePageActions.GoToCheckoutPage();
             checkoutPageActions.RemoveAllItems();
         }
         catch (Exception ex)
