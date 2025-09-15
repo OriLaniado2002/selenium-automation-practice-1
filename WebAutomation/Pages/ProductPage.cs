@@ -5,14 +5,14 @@ using OpenQA.Selenium.Support.UI;
 public class ProductPage
 {
     private IWebDriver driver;
-    private NavigationActions navigationActions;
+    private BaseActions baseActions;
 
     public ProductPage(IWebDriver driver)
     {
         this.driver = driver;
-        navigationActions = new NavigationActions(driver);
+        baseActions = new BaseActions(driver);
 
-        navigationActions.JustWait();
+        baseActions.JustWait();
     }
 
     protected IWebElement addQuantityBtn => driver.FindElement(By.XPath("//*[@id='productProperties']/div[2]/e-sec-plus-minus/div/div[1]"));

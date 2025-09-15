@@ -14,4 +14,15 @@ public class CartWindowPage
     protected IWebElement totalOfItemsInWindow => driver.FindElement(By.XPath("//*[@id='toolTipCart']/div/table/tfoot/tr[1]/td[1]/span/label"));
     protected IWebElement checkOutBtn => driver.FindElement(By.Id("checkOutPopUp"));
 
+    public bool IsCartWindowDisplayed()
+    {
+        if (checkOutBtn.Displayed)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }

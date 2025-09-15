@@ -6,17 +6,17 @@ using OpenQA.Selenium.Support.UI;
 public class HomePage
 {
     private IWebDriver driver;
-    private NavigationActions navigationActions;
+    private BaseActions baseActions;
 
     public HomePage(IWebDriver driver)
     {
         this.driver = driver;
-        navigationActions = new NavigationActions(driver);
+        baseActions = new BaseActions(driver);
 
-        navigationActions.JustWait();
+        baseActions.JustWait();
     }
 
-    protected IWebElement home => driver.FindElement(By.XPath("/html/body/header/nav/div/a/span[1]"));
+    protected IWebElement home => driver.FindElement(By.XPath("//span[text()='dvantage']"));
     protected IWebElement headphones => driver.FindElement(By.Id("headphonesImg"));
     protected IWebElement tablets => driver.FindElement(By.Id("tabletsImg"));
     protected IWebElement mice => driver.FindElement(By.Id("miceImg"));
