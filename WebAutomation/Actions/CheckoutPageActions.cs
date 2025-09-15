@@ -45,4 +45,22 @@ public class CheckoutPageActions : CheckoutPage
             }
         }
     }
+
+    public bool IsCheckoutPageDisplayed()
+    {
+        return pageTitle.Displayed;
+    }
+
+    public double ReturnCheckoutPageTotalPriceAsDouble()
+    {
+        baseActions.ExplicitWaitByXpath("//span[contains(@class, 'roboto-medium') and contains(text(), '$')]");
+
+        string XPathVariable = "//span[contains(@class, 'roboto-medium') and contains(text(), '$')]";
+        IWebElement checkoutPageTotalPrice = driver.FindElement(By.XPath(XPathVariable));
+        string totalPriceText = checkoutPageTotalPrice.Text.Trim();
+        totalPriceText = totalPriceText.Replace("$" , "");
+
+        double checkoutTotalPriceDoubleNum = Convert.ToDouble(totalPriceText);
+        return checkoutTotalPriceDoubleNum;
+    }
 }

@@ -4,10 +4,12 @@ using OpenQA.Selenium.DevTools.V135.Browser;
 public class CheckoutPage
 {
     protected IWebDriver driver;
+    protected BaseActions baseActions;
 
     public CheckoutPage(IWebDriver driver)
     {
         this.driver = driver;
+        baseActions = new BaseActions(driver);
     }
 
     protected IWebElement pageTitle => driver.FindElement(By.XPath("//h3[contains(text(), 'SHOPPING CART')]"));

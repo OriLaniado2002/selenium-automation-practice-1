@@ -2,6 +2,8 @@ using OpenQA.Selenium;
 using System;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Interactions;
+using SeleniumExtras.WaitHelpers;
+
 
 public class HomePageActions : HomePage
 {
@@ -16,7 +18,12 @@ public class HomePageActions : HomePage
 
     public void HeadphonesCatalog() => headphones.Click();
     public void TabletsCatalog() => tablets.Click();
-    public void MiceCatalog() => mice.Click();
+    public void MiceCatalog()
+    {
+        WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+        wait.Until(ExpectedConditions.ElementToBeClickable(mice));
+        mice.Click();
+    }
     public void SpeakersCatalog() => speakers.Click();
     public void LaptopsCatalog() => laptops.Click();
     public void GoToCheckoutPage() => menuCart.Click();

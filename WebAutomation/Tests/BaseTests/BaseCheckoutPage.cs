@@ -2,7 +2,7 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 
 
-public class BaseCartWindow : BaseCommon
+public class BaseCheckoutPage : BaseCommon
 {
     [SetUp]
     public void SetUp()
@@ -15,6 +15,7 @@ public class BaseCartWindow : BaseCommon
     {
         try
         {
+            //homePageActions.GoToCheckoutPage();
             checkoutPageActions.RemoveAllItems();
         }
         catch (Exception ex)
